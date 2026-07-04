@@ -1,0 +1,26 @@
+# NAME: DOMESTIC 国内 - 直连
+# AUTHOR: oliver556
+# REPO: https://github.com/oliver556/rule-script
+# UPDATED: 2026-07-04
+# DOMAIN-SUFFIX: 6
+# DOMAIN-KEYWORD: 2
+# TOTAL: 8
+
+DOMAIN-KEYWORD,nvidia
+DOMAIN-KEYWORD,nhedu
+
+DOMAIN-SUFFIX,ipw.cn
+DOMAIN-SUFFIX,ident.me
+DOMAIN-SUFFIX,ipify.org
+DOMAIN-SUFFIX,ipip.net
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,ifconfig.me
+
+DOMAIN-SUFFIX,maclee.top
+DOMAIN-SUFFIX,bianchengnas.top
+DOMAIN-SUFFIX,weizong.top
+DOMAIN-SUFFIX,yjyjyyj.top
+DOMAIN-SUFFIX,122635.xyz
+DOMAIN-SUFFIX,terrywing.top
+
+DOMAIN-SUFFIX,mooc1.chaoxing.com

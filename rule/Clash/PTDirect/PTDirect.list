@@ -1,0 +1,33 @@
+# NAME: PTDirect - PT 直连
+# AUTHOR: oliver556
+# REPO: https://github.com/oliver556/rule-script
+# UPDATED: 2026-07-04
+# DOMAIN-KEYWORD: 7
+# TOTAL: 7
+
+# 馒头
+DOMAIN-KEYWORD,m-team
+# 憨憨
+DOMAIN-KEYWORD,hhanclub
+# 观众
+DOMAIN-KEYWORD,audiences
+# 学校
+DOMAIN-KEYWORD,btschool
+# 铂金家
+DOMAIN-KEYWORD,pthome
+# 老师
+DOMAIN-KEYWORD,nicept
+# 青蛙
+DOMAIN-KEYWORD,qingwapt
+# 咖啡
+DOMAIN-KEYWORD,ptcafe
+# 车车
+DOMAIN-KEYWORD,carpt
+# 高清视界
+DOMAIN-KEYWORD,hdarea
+# 红豆饭
+DOMAIN-SUFFIX,hdfans.org
+# 皇后
+DOMAIN-SUFFIX,open.cd
+# pttime
+DOMAIN-KEYWORD,pttime

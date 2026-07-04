@@ -1,0 +1,16 @@
+# NAME: FOREIGN 国外 - 代理
+# AUTHOR: oliver556
+# REPO: https://github.com/oliver556/rule-script
+# UPDATED: 2026-07-04
+# DOMAIN-SUFFIX: 2
+# DOMAIN-KEYWORD: 3
+# TOTAL: 5
+
+DOMAIN-SUFFIX,viplee.cc
+DOMAIN-SUFFIX,btdig.com
+
+DOMAIN-SUFFIX,subhd.tv
+DOMAIN-KEYWORD,hdhive
+DOMAIN-KEYWORD,javdb
+
+DOMAIN-SUFFIX,macked.app
