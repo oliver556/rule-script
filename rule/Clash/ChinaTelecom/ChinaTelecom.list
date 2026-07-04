@@ -1,0 +1,16 @@
+# NAME: ChinaTelecom 中国电信
+# AUTHOR: oliver556
+# REPO: https://github.com/oliver556/rule-script
+# UPDATED: 2026-07-04
+# DOMAIN-SUFFIX: 6
+# TOTAL: 6
+
+# 中国电信 APP / 掌上营业厅
+DOMAIN-SUFFIX,189.cn
+DOMAIN-SUFFIX,chinatelecom.cn
+DOMAIN-SUFFIX,chinatelecom.com.cn
+DOMAIN-SUFFIX,ct10000.com
+
+# 翼支付 / 话费充值支付链路
+DOMAIN-SUFFIX,bestpay.com.cn
+DOMAIN-SUFFIX,bestpay.cn
