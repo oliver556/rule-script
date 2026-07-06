@@ -1,0 +1,18 @@
+# NAME: ZhihuAds 知乎去广告
+# AUTHOR: oliver556
+# REPO: https://github.com/oliver556/rule-script
+# UPDATED: 2026-07-06
+# DOMAIN: 6
+# IP-CIDR: 2
+# IP-CIDR6: 1
+# TOTAL: 9
+
+DOMAIN,appcloud.zhihu.com
+DOMAIN,appcloud2.in.zhihu.com
+DOMAIN,crash2.zhihu.com
+DOMAIN,mqtt.zhihu.com
+DOMAIN,sugar.zhihu.com
+DOMAIN,zxid-m.mobileservice.cn
+IP-CIDR,103.41.167.237/32,no-resolve
+IP-CIDR,118.89.204.198/32,no-resolve
+IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,no-resolve
