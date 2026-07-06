@@ -1,0 +1,48 @@
+name: Build Stash Override
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "rule/Clash/**/*.list"
+      - "script/stoverride/**/*.stoverride"
+      - "script/stoverride/**/*.yaml"
+      - "script/build-stoverride.js"
+      - ".github/workflows/build-stoverride.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-stoverride-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build Stash override
+        run: node script/build-stoverride.js
+
+      - name: Validate generated YAML
+        run: |
+          ruby -e 'require "yaml"; YAML.load_file("script/stoverride/ClashHub_All_Ads.stoverride"); puts "YAML_OK"'
+
+      - name: Commit generated override
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: build stash override"
+          file_pattern: "script/stoverride/ClashHub_All_Ads.stoverride"

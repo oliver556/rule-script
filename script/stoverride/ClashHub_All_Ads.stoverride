@@ -1,0 +1,115 @@
+name: ClashHub 去广告合集
+desc: 知乎、菜鸟等 App 去广告合集
+icon: https://github.viplee.cc/raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdGuard.png
+category: 去广告
+date: "2026-07-06"
+
+rules:
+  # Zhihu_remove_ads
+  - DOMAIN,appcloud.zhihu.com,REJECT
+  - DOMAIN,appcloud2.in.zhihu.com,REJECT
+  - DOMAIN,crash2.zhihu.com,REJECT
+  - DOMAIN,mqtt.zhihu.com,REJECT
+  - DOMAIN,sugar.zhihu.com,REJECT
+  - DOMAIN,zxid-m.mobileservice.cn,REJECT
+  - IP-CIDR,103.41.167.237/32,REJECT,no-resolve
+  - IP-CIDR,118.89.204.198/32,REJECT,no-resolve
+  - IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
+  # Cainiao_remove_ads
+  - DOMAIN,adsmind.ugdtimg.com,REJECT
+  - DOMAIN,amdc.m.youku.com,REJECT
+  - DOMAIN,apiv4-iyes.youku.com,REJECT
+  - DOMAIN,httpdns.alicdn.com,REJECT
+  - DOMAIN,huichuan-mc.sm.cn,REJECT
+  - DOMAIN,huichuan.sm.cn,REJECT
+  - DOMAIN,iyes.youku.com,REJECT
+  - DOMAIN,mc.atm.youku.com,REJECT
+  - DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT
+  - DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT
+  - DOMAIN,yk-ssp.ad.youku.com,REJECT
+  - DOMAIN,ykad-data.youku.com,REJECT
+
+http:
+  mitm:
+    # Zhihu_remove_ads
+    - api.zhihu.com
+    - www.zhihu.com
+    - appcloud2.zhihu.com
+    - appcloud2.in.zhihu.com
+    # Cainiao_remove_ads
+    - cn-acs.m.cainiao.com
+    - guide-acs.m.taobao.com
+
+  url-rewrite:
+    # Zhihu_remove_ads
+    # 首页 - 悬浮图标、顶部横幅、开屏广告、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片
+    - ^https:\/\/api\.zhihu\.com\/commercial_api\/(answer\/\d+\/bottom-v2|article\/\d+\/bottom-v2|banners_v3\/app_topstory_banner|launch_v2|real_time_launch_v2) - reject-dict
+    - ^https:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings - reject-dict
+    - ^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) - reject-dict
+    - ^https:\/\/api\.zhihu\.com\/root\/window - reject-dict
+    # 会员页面 - 弹窗、悬浮动图
+    - ^https:\/\/api\.zhihu\.com\/(bazaar\/float_window|market\/popovers_v2) - reject-dict
+    # 我的页面 - 项目列表、会员卡片
+    - ^https:\/\/api\.zhihu\.com\/me\/guides - reject-dict
+    - ^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card - reject
+    # 搜索页 - 关键词、猜你想搜
+    - ^https:\/\/api\.zhihu\.com\/search\/preset_words - reject-dict
+    - ^https:\/\/www\.zhihu\.com\/api\/v4\/search\/related_queries\/(article|answer)\/\d+ - reject-dict
+    # 回答详情页 - 评论区顶部、下一个回答
+    - ^https:\/\/api\.zhihu\.com\/comment_v5\/(articles|answers)\/\d+\/list-headers - reject-dict
+    - ^https:\/\/api\.zhihu\.com\/prague\/related_suggestion_native\/feed\? - reject-dict
+    - ^https:\/\/api\.zhihu\.com\/v5\.1\/topics\/answer\/\d+\/relation - reject-dict
+    # 其他 - 服务器推送配置
+    - ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config - reject
+    - ^https:\/\/api\.zhihu\.com\/ad-style-service\/request - reject-dict
+    - ^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp - reject-dict
+    # Cainiao_remove_ads
+    # 首页 - 好物推荐、商品推广、底部标签页、快递详情页、问卷调查、主页图标
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn - reject-dict
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn - reject-dict
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|expose\.mreply|index)\.cn - reject-dict
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn - reject-dict
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn - reject-dict
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn - reject-dict
+    # 发现页 - 数字角标、裹裹券
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter - reject-dict
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn - reject-dict
+    - ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn - reject-dict
+    # 支付宝 - 菜鸟小程序
+    - ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad - reject-dict
+
+  script:
+    # Cainiao_remove_ads
+    # 移除阿里巴巴通用广告请求
+    - match: ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$
+      name: 移除阿里巴巴通用广告请求_40
+      type: response
+      # 首页 - 好物推荐、商品推广、底部标签页、快递详情页、问卷调查、主页图标
+    - match: ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn
+      name: 移除首页推广_42
+      type: response
+      require-body: true
+    - match: ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn
+      name: 移除首页推广_42
+      type: response
+      require-body: true
+      # 消息中心
+    - match: ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn
+      name: 移除首页推广_42
+      type: response
+      require-body: true
+      # 支付宝 - 菜鸟小程序
+    - match: ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow
+      name: 移除首页推广_42
+      type: response
+      require-body: true
+
+script-providers:
+  # Cainiao_remove_ads
+  移除阿里巴巴通用广告请求_40:
+    url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Alibaba/Alibaba_amdc_reject.js
+    interval: 86400
+  # Cainiao_remove_ads
+  移除首页推广_42:
+    url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Cainiao/Cainiao_remove_ads.js
+    interval: 86400

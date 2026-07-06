@@ -1,0 +1,21 @@
+# NAME: CainiaoAds 菜鸟去广告
+# AUTHOR: oliver556
+# REPO: https://github.com/oliver556/rule-script
+# UPDATED: 2026-07-06
+# DOMAIN: 12
+# TOTAL: 12
+
+# AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$), (USER-AGENT, Cainiao4iPhone*)), REJECT
+DOMAIN,adsmind.ugdtimg.com,REJECT
+DOMAIN,amdc.m.youku.com,REJECT
+DOMAIN,apiv4-iyes.youku.com,REJECT
+DOMAIN,httpdns.alicdn.com,REJECT
+DOMAIN,huichuan-mc.sm.cn,REJECT
+DOMAIN,huichuan.sm.cn,REJECT
+DOMAIN,iyes.youku.com,REJECT
+# DOMAIN, m-vali.cp31.ott.cibntv.net, REJECT
+DOMAIN,mc.atm.youku.com,REJECT
+DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT
+DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT
+DOMAIN,yk-ssp.ad.youku.com,REJECT
+DOMAIN,ykad-data.youku.com,REJECT

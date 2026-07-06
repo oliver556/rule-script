@@ -1,0 +1,9 @@
+name: ClashHub 去广告合集
+desc: 知乎、菜鸟等 App 去广告合集
+icon: https://github.viplee.cc/raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdGuard.png
+category: 去广告
+date: "2026-07-06"
+
+sources:
+  - script/stoverride/Zhihu_remove_ads.stoverride
+  - script/stoverride/Cainiao_remove_ads.stoverride
